@@ -15,15 +15,6 @@ api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
--- Disable spell checking in terminal buffers
-local nospell_group = api.nvim_create_augroup('nospell', { clear = true })
-api.nvim_create_autocmd('TermOpen', {
-  group = nospell_group,
-  callback = function()
-    vim.wo[0].spell = false
-  end,
-})
-
 -- LSP
 local keymap = vim.keymap
 
@@ -62,9 +53,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local bufnr = ev.buf
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-    -- Attach plugins
-    require('nvim-navic').attach(client, bufnr)
-
     vim.cmd.setlocal('signcolumn=yes')
     vim.bo[bufnr].bufhidden = 'hide'
 
@@ -80,7 +68,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<space>pd', peek_definition, desc('lsp [p]eek [d]efinition'))
     keymap.set('n', '<space>pt', peek_type_definition, desc('lsp [p]eek [t]ype definition'))
     keymap.set('n', 'gi', vim.lsp.buf.implementation, desc('lsp [g]o to [i]mplementation'))
-    keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, desc('[lsp] signature help'))
+    keymap.set('n', ';', vim.lsp.buf.signature_help, desc('[lsp] signature help'))
     keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, desc('lsp add [w]orksp[a]ce folder'))
     keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, desc('lsp [w]orkspace folder [r]emove'))
     keymap.set('n', '<space>wl', function()

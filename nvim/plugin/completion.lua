@@ -147,17 +147,3 @@ cmp.setup.cmdline(':', {
     { name = 'path' },
   },
 })
-
-vim.keymap.set({ 'i', 'c', 's' }, '<C-n>', cmp.complete, { noremap = false, desc = '[cmp] complete' })
-vim.keymap.set({ 'i', 'c', 's' }, '<C-f>', function()
-  complete_with_source('path')
-end, { noremap = false, desc = '[cmp] path' })
-vim.keymap.set({ 'i', 'c', 's' }, '<C-o>', function()
-  complete_with_source('nvim_lsp')
-end, { noremap = false, desc = '[cmp] lsp' })
-vim.keymap.set({ 'c' }, '<C-h>', function()
-  complete_with_source('cmdline_history')
-end, { noremap = false, desc = '[cmp] cmdline history' })
-vim.keymap.set({ 'c' }, '<C-c>', function()
-  complete_with_source('cmdline')
-end, { noremap = false, desc = '[cmp] cmdline' })

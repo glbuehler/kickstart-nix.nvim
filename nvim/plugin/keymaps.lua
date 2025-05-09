@@ -13,7 +13,7 @@ vim.keymap.set('n', 'gj', vim.diagnostic.goto_next, { noremap = true, silent = t
 vim.keymap.set('n', '<C-k>', ':move -2<CR>', {})
 vim.keymap.set('n', '<C-j>', ':move +1<CR>', {})
 
-vim.keymap.set('n', '<C-c>', ':nohl', {});
+vim.keymap.set('n', '<C-c>', ':nohl<CR>', {});
 
 -- keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'move [d]own half-page and center' })
 -- keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'move [u]p half-page and center' })
