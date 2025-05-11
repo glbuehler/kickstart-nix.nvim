@@ -84,6 +84,8 @@ with final.pkgs.lib; let
     # ^ bleeding-edge plugins from flake inputs
     # which-key-nvim
 
+    harpoon
+
     # colorschemes
     tokyonight-nvim
   ];
