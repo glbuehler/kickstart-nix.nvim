@@ -1,3 +1,8 @@
+
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
+vim.bo.softtabstop = 2
+
 -- Exit if the language server isn't available
 if vim.fn.executable('nil') ~= 1 then
   return
