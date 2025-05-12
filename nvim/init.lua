@@ -20,6 +20,8 @@ opt.lazyredraw = true
 opt.incsearch = true
 opt.hlsearch = true
 
+opt.clipboard = "unnamedplus"
+
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
