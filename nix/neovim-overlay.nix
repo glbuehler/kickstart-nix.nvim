@@ -94,6 +94,9 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
+    rust-analyzer
+    rustfmt
+    clippy
     typescript-language-server
 
     ripgrep
