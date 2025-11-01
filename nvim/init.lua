@@ -26,6 +26,7 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
+opt.scrolloff = 6
 opt.foldenable = true
 opt.history = 2000
 opt.nrformats = 'bin,hex' -- 'octal'

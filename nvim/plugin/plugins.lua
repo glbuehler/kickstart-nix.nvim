@@ -9,3 +9,4 @@ vim.cmd.colorscheme('tokyonight')
 -- even with default configs
 
 require('nvim-surround').setup()
+require('todo-comments').setup()

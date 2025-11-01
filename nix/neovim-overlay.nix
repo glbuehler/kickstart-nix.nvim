@@ -88,6 +88,7 @@ with final.pkgs.lib; let
 
     # colorschemes
     tokyonight-nvim
+    todo-comments-nvim
   ];
 
   extraPackages = with pkgs; [
