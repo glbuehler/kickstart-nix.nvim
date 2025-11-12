@@ -34,7 +34,8 @@ with lib;
     # You probably don't want to create vi or vim aliases
     # if the appName is something different than "nvim"
     # Add a "vi" binary to the build output as an alias?
-    viAlias ? appName == null || appName == "nvim",
+    viAlias ? false, # appName == null || appName == "nvim",
+    
     # Add a "vim" binary to the build output as an alias?
     vimAlias ? appName == null || appName == "nvim",
     wrapRc ? true,
