@@ -99,6 +99,7 @@ with final.pkgs.lib; let
     rustfmt
     clippy
     typescript-language-server
+    ocamlPackages.ocaml-lsp
 
     ripgrep
     wl-clipboard
