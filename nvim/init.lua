@@ -8,6 +8,8 @@ local opt = vim.o
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.editorconfig = true
+
 -- See :h <option> to see what the options do
 
 -- Search down into subfolders
