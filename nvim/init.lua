@@ -3,6 +3,13 @@ vim.loader.enable()
 local cmd = vim.cmd
 local opt = vim.o
 
+
+-- Allow additional RTP paths through external configuration
+local rtp = os.getenv('NVIM_RTP_EXTRA')
+if rtp then
+    vim.opt.rtp:append(rtp)
+end
+
 -- <leader> key. Defaults to `\`. Some people prefer space.
 -- The default leader is '\'. Some people prefer <space>. Uncomment this if you do, too.
 vim.g.mapleader = ' '
@@ -21,6 +28,7 @@ opt.cursorline = true
 opt.lazyredraw = true
 opt.incsearch = true
 opt.hlsearch = true
+opt.smartcase = true
 
 opt.clipboard = "unnamedplus"
 
