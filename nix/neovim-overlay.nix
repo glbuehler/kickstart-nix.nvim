@@ -85,6 +85,8 @@ with final.pkgs.lib; let
     # which-key-nvim
 
     harpoon
+    nvim-dap
+    nvim-dap-ui
 
     # colorschemes
     tokyonight-nvim
