@@ -17,6 +17,9 @@ vim.g.maplocalleader = ' '
 
 vim.g.editorconfig = true
 
+-- sql completion uses <C-c> by default
+vim.g.ftplugin_sql_omni_key = '<C-b>'
+
 -- See :h <option> to see what the options do
 
 -- Search down into subfolders
