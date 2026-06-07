@@ -1,5 +1,5 @@
 if vim.g.did_load_keymaps_plugin then
-  return
+    return
 end
 vim.g.did_load_keymaps_plugin = true
 
@@ -7,8 +7,27 @@ vim.g.did_load_keymaps_plugin = true
 vim.keymap.set('t', '<C-b>', '<C-\\><C-n>', { desc = 'switch to normal mode' })
 vim.keymap.set('t', '<C-S-b>', '<C-b>', { desc = 'send <C-b> to terminal' })
 
-vim.keymap.set('n', 'gk', vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = 'previous [d]iagnostic' })
-vim.keymap.set('n', 'gj', vim.diagnostic.goto_next, { noremap = true, silent = true, desc = 'next [d]iagnostic' })
+local function jump_keymap(map, count, severity, desc)
+    vim.keymap.set('n', map, function()
+            vim.diagnostic.jump({
+                count = count,
+                wrap = true,
+                float = true,
+                severity = severity,
+            })
+        end,
+        {
+            noremap = true,
+            silent = true,
+            desc = desc
+        }
+    )
+end
+
+jump_keymap('gk', -1, "ERROR", 'previous [d]iagnostic')
+jump_keymap('gK', -1, nil, 'previous [d]iagnostic (all)')
+jump_keymap('gj', 1, "ERROR", 'next [d]iagnostic')
+jump_keymap('gJ', 1, nil, 'next [d]iagnostic (all)')
 
 vim.keymap.set('n', '<C-k>', ':move -2<CR>', {})
 vim.keymap.set('n', '<C-j>', ':move +1<CR>', {})

@@ -31,6 +31,7 @@ opt.cursorline = true
 opt.lazyredraw = true
 opt.incsearch = true
 opt.hlsearch = true
+opt.ignorecase = true
 opt.smartcase = true
 
 opt.clipboard = "unnamedplus"
