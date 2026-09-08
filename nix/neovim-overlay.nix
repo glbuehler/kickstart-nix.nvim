@@ -99,7 +99,6 @@ with final.pkgs.lib; let
     nil # nix LSP
 
     ripgrep
-    wl-clipboard
   ];
 in {
   # This is the neovim derivation
